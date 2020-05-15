@@ -17,6 +17,7 @@ import Register from './Register';
 import RegisterFormH from './RegisterFormH';
 import LoginForm from './LoginForm';
 
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -105,14 +106,16 @@ export default function FloatingActionButtonZoom() {
 
   return (
     <div className={classes.root}>
+      
       <AppBar position="static" color="default">
         <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          variant="fullWidth"
+          
           aria-label="action tabs example"
+          centered
         >
           <Tab label="Login" {...a11yProps(0)} />
           <Tab label="Register" {...a11yProps(1)} />
@@ -147,6 +150,7 @@ export default function FloatingActionButtonZoom() {
           </Fab>
         </Zoom>
       ))}
+      
     </div>
   );
 }
