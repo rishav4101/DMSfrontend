@@ -6,27 +6,38 @@ const ShadeTextFieldStyle = () => {
   const inputBaseStyles = shadeTextFieldStylesHook.useInputBase();
   const inputLabelStyles = shadeTextFieldStylesHook.useInputLabel();
   return (
-    <div>
-      <TextField
-        label={'Username'}
-        placeholder={'Username'}
-        margin={'normal'}
-        required
-        InputLabelProps={{ shrink: true, classes: inputLabelStyles }}
-        InputProps={{ classes: inputBaseStyles, disableUnderline: true }}
-      />
-      <div />
-      <TextField
-        label={'Password'}
-        placeholder={'Password'}
-        margin={'normal'}
-        disabled
-        InputLabelProps={{ shrink: true, classes: inputLabelStyles }}
-        InputProps={{ classes: inputBaseStyles, disableUnderline: true }}
-      />
-      <div />
-  
-    </div>
+    <>
+      <div style={{
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: 'center'
+      }}>
+        <TextField
+          label={'Username'}
+          placeholder={'Username'}
+          margin={'normal'}
+          required
+          InputLabelProps={{ shrink: true, classes: inputLabelStyles }}
+          InputProps={{ classes: inputBaseStyles, disableUnderline: true }}
+        />
+      </div>
+      <div style={{
+        display: 'flex',
+        justifyContent: "center",
+        alignItems: 'center'
+      }}>
+        <TextField
+          label={'Password'}
+          placeholder={'Password'}
+          margin={'normal'}
+          disabled
+          InputLabelProps={{ shrink: true, classes: inputLabelStyles }}
+          InputProps={{ classes: inputBaseStyles, disableUnderline: true }}
+        />
+
+
+      </div>
+    </>
   );
 };
 

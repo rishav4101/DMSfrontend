@@ -1,13 +1,13 @@
 
 import React from 'react'
-import Navbar from '../components/Navbar' 
+import NavbarM from '../components/NavbarM'
 import Tabs from '../components/Tabs'
 function Registration() {
     return (
         <div>
-            <div><Navbar/></div>
-            
-            <div style = {{width:"100VW"}}><Tabs /></div>
+            <div><NavbarM /></div>
+
+            <div><Tabs /></div>
         </div>
     )
 }

@@ -15,6 +15,9 @@ import Box from '@material-ui/core/Box';
 import Login from './Login';
 import Register from './Register';
 import RegisterFormH from './RegisterFormH';
+import Register2 from './Register2';
+import RegistrationFormI from './RegistrationFormI';
+
 import LoginForm from './LoginForm';
 
 
@@ -51,22 +54,20 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width: 500,
+    width: '100%',
     position: 'relative',
     minHeight: 200,
   },
   fab: {
-    position: 'absolute',
+    display: 'flex',
+    justifyContent: "center",
+    alignItems: 'center',
+
     bottom: theme.spacing(2),
-    right: theme.spacing(2),
+
+
   },
-  fabGreen: {
-    color: theme.palette.common.white,
-    backgroundColor: green[500],
-    '&:hover': {
-      backgroundColor: green[600],
-    },
-  },
+
 }));
 
 export default function FloatingActionButtonZoom() {
@@ -100,26 +101,33 @@ export default function FloatingActionButtonZoom() {
       icon: <Register />,
       label: 'Register',
     },
-    
-    
+    {
+      color: 'secondary',
+      className: classes.fab,
+      icon: <Register2 />,
+      label: 'Register',
+    },
+
+
   ];
 
   return (
     <div className={classes.root}>
-      
+
       <AppBar position="static" color="default">
         <Tabs
           value={value}
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          
+
           aria-label="action tabs example"
           centered
         >
           <Tab label="Login" {...a11yProps(0)} />
-          <Tab label="Register" {...a11yProps(1)} />
-          
+          <Tab label="Hospital Registration" {...a11yProps(1)} />
+          <Tab label="Individual Registration" {...a11yProps(2)} />
+
         </Tabs>
       </AppBar>
       <SwipeableViews
@@ -128,12 +136,15 @@ export default function FloatingActionButtonZoom() {
         onChangeIndex={handleChangeIndex}
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
-          <div><LoginForm/></div>
+          <div><LoginForm /></div>
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          <div><RegisterFormH/></div>
+          <div><RegisterFormH /></div>
         </TabPanel>
-      
+        <TabPanel value={value} index={2} dir={theme.direction}>
+          <div><RegistrationFormI /></div>
+        </TabPanel>
+
       </SwipeableViews>
       {fabs.map((fab, index) => (
         <Zoom
@@ -145,12 +156,18 @@ export default function FloatingActionButtonZoom() {
           }}
           unmountOnExit
         >
-          <Fab aria-label={fab.label} className={fab.className} color={fab.color}>
-            {fab.icon}
-          </Fab>
+          <div style={{
+            display: 'flex',
+            justifyContent: "center",
+            alignItems: 'center'
+          }}>
+            <Fab aria-label={fab.label} className={fab.className} color={fab.color}>
+              {fab.icon}
+            </Fab>
+          </div>
         </Zoom>
       ))}
-      
+
     </div>
   );
 }

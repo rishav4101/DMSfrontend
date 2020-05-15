@@ -1,10 +1,10 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
+import NavbarM from '../components/NavbarM'
 
 function index() {
     return (
         <div>
-            <Navbar/>
+            <NavbarM />
         </div>
     )
 }
